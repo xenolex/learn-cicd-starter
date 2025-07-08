@@ -21,7 +21,7 @@ jobs:
       - name: Show Golang version
         run: go test -cover ./...
        
-   style:
+  style:
     name: Style
     runs-on: ubuntu-latest
     
