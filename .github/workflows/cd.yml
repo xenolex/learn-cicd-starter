@@ -28,4 +28,7 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v2'
       
       - name: Push to repo
-        run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-465509/notely-ar-repo/notely:0.1.2 .
+        run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-465509/notely-ar-repo/notely:0.1.3 .
+        
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/notely-465509/notely-ar-repo/notely:0.1.3 --region us-central1 --allow-unauthenticated --project notely-465509 --max-instances=4
